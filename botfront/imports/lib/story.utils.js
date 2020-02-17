@@ -348,7 +348,6 @@ export const getStoriesAndDomain = async (projectId, language) => {
 export const accumulateExceptions = (
     story,
     slots,
-    templates = null,
     storyControllers,
     setStoryControllers,
     saveStoryMethod,
@@ -364,7 +363,6 @@ export const accumulateExceptions = (
                 story: currentStory.story || '',
                 slots,
                 onUpdate: content => saveStoryMethod(currentPath, { story: content }),
-                templates,
                 isABranch,
             });
             currentController = newStoryControllers[currentPathAsString];
