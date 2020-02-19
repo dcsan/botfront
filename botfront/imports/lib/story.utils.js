@@ -351,6 +351,7 @@ export const accumulateExceptions = (
     storyControllers,
     setStoryControllers,
     saveStoryMethod,
+    setLastMdTypeMethod,
 ) => {
     const exceptions = {};
     const newStoryControllers = {};
@@ -363,6 +364,7 @@ export const accumulateExceptions = (
                 story: currentStory.story || '',
                 slots,
                 onUpdate: content => saveStoryMethod(currentPath, { story: content }),
+                onMdType: setLastMdTypeMethod,
                 isABranch,
             });
             currentController = newStoryControllers[currentPathAsString];
