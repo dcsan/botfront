@@ -73,7 +73,7 @@ describe('slots', function() {
             .focus()
             .type('\n- slot{{}"name": "Ali"}', { force: true });
 
-        cy.dataCy('top-menu-error-alert');
+        cy.dataCy('top-menu-warning-alert');
         cy.dataCy('slots-modal').click();
         cy.dataCy('add-slot').click();
         cy.contains('text').click();
@@ -83,6 +83,6 @@ describe('slots', function() {
             .type('name');
         cy.dataCy('save-button').click();
         cy.visit('/project/bf/stories');
-        cy.dataCy('top-menu-error-alert').should('not.exist');
+        cy.dataCy('top-menu-warning-alert').should('not.exist');
     });
 });
